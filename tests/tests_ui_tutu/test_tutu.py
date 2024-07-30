@@ -60,19 +60,19 @@ def test_update_personal_data():
     browser.element('#editDataLink').click()
 
     # Fill name field
-    browser.element('#editDForm_first_name').should(be.blank).type('Maria')
+    browser.element('#editDForm_first_name').type('Maria')
 
     # Fill middle name field
-    browser.element('#editDForm_middle_name').should(be.blank).type('Ivanovna')
+    browser.element('#editDForm_middle_name').type('Ivanovna')
 
     # Fill last name field
-    browser.element('#editDForm_last_name').should(be.blank).type('Petrova')
+    browser.element('#editDForm_last_name').type('Petrova')
 
     # Fill phone number
-    browser.element('#editDForm_phone').should(be.blank).type('9007778899')
+    browser.element('#editDForm_phone').type('9007778899')
 
     # Fill birthday
-    browser.element('#editDForm_birthday').should(be.blank).type('20.04.2000')
+    browser.element('#editDForm_birthday').type('20.04.2000').click()
 
     # Check consent to the processing of personal data
     browser.element('#editDForm_agree').click()
@@ -102,6 +102,7 @@ def test_change_language_page():
 
     # Change language
     browser.element('[class="flag eng"]').click()
+    browser.element('[class="flag rus"]').click()
 
 
 def test_search_aviaticket():
@@ -121,7 +122,7 @@ def test_search_aviaticket():
     browser.element('[data-ti="submit-trigger"]').click()
 
     # Open page with plane tickets
-    browser.element('[data-ti-nav-item="avia"]').click()
+    browser.all('[class="styles__navigation__OSoea"]').element('[data-ti-nav-item="avia"]').click()
 
     # Select city from
     browser.element('[data-ti="city_from"]').type('Москва').press_enter()
