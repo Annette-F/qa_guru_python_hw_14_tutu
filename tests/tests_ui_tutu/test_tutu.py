@@ -1,6 +1,14 @@
 from selene import browser, have, be
+from allure_commons.types import Severity
+import allure
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('Owner', 'Annette-F')
+@allure.feature('Authorization with valid login and password')
+@allure.story('Authorization')
+@allure.link('https://www.tutu.ru', name='Tutu')
 def test_valid_authorization():
     # Open main page
     browser.open('/')
@@ -19,6 +27,12 @@ def test_valid_authorization():
     browser.element('[data-ti="user_name_link"]').should(have.text('marivtest@mail.ru'))
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('Owner', 'Annette-F')
+@allure.feature('Authorization with wrong password')
+@allure.story('Authorization')
+@allure.link('https://www.tutu.ru', name='Tutu')
 def test_authorization_with_wrong_password():
     # Open main page
     browser.open('/')
@@ -37,6 +51,12 @@ def test_authorization_with_wrong_password():
     browser.element('[data-ti-error="authApi"]').should(have.text('Неверный адрес почты или пароль.'))
 
 
+@allure.tag('Web')
+@allure.severity(Severity.NORMAL)
+@allure.label('Owner', 'Annette-F')
+@allure.feature('Update profile')
+@allure.story('Profile')
+@allure.link('https://www.tutu.ru', name='Tutu')
 def test_update_personal_data():
     # Open main page
     browser.open('/')
@@ -84,6 +104,12 @@ def test_update_personal_data():
     browser.element('.jUzldXN___logoLink').click()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.MINOR)
+@allure.label('Owner', 'Annette-F')
+@allure.feature('Page language changes')
+@allure.story('Page language')
+@allure.link('https://www.tutu.ru', name='Tutu')
 def test_change_language_page():
     # Open main page
     browser.open('/')
@@ -105,6 +131,12 @@ def test_change_language_page():
     browser.element('[class="flag rus"]').click()
 
 
+@allure.tag('Web')
+@allure.severity(Severity.CRITICAL)
+@allure.label('Owner', 'Annette-F')
+@allure.feature('Search aviatickets')
+@allure.story('Page aviatickets')
+@allure.link('https://www.tutu.ru', name='Tutu')
 def test_search_aviaticket():
     # Open main page
     browser.open('/')
