@@ -60,19 +60,19 @@ def test_update_personal_data():
     browser.element('#editDataLink').click()
 
     # Fill name field
-    browser.element('#editDForm_first_name').type('Maria')
+    browser.element('#editDForm_first_name').clear().type('Maria')
 
     # Fill middle name field
-    browser.element('#editDForm_middle_name').type('Ivanovna')
+    browser.element('#editDForm_middle_name').clear().type('Ivanovna')
 
     # Fill last name field
-    browser.element('#editDForm_last_name').type('Petrova')
+    browser.element('#editDForm_last_name').clear().type('Petrova')
 
     # Fill phone number
-    browser.element('#editDForm_phone').type('9007778899')
+    browser.element('#editDForm_phone').clear().type('9007778899')
 
     # Fill birthday
-    browser.element('#editDForm_birthday').type('20.04.2000').click()
+    browser.element('#editDForm_birthday').clear().type('20.04.2000').click()
 
     # Check consent to the processing of personal data
     browser.element('#editDForm_agree').click()
@@ -121,53 +121,24 @@ def test_search_aviaticket():
     # Submit authorization
     browser.element('[data-ti="submit-trigger"]').click()
 
-    # Open page with plane tickets
-    browser.all('[class="styles__navigation__OSoea"]').element('[data-ti-nav-item="avia"]').click()
-
     # Select city from
-    browser.element('[data-ti="city_from"]').type('Москва').press_enter()
+    browser.element('[name="city_from"]').type('Москва').press_enter()
 
     # Select city to
-    browser.element('[data-ti="city_to"]').type('Сочи').press_enter()
+    browser.element('[name="city_to"]').type('Сочи').press_enter()
 
     # Select date From
-    browser.element('[data-ti="date_fromDate"]').element('[data-ti="order-calendar-navigation-next"]').element(
-        '[data-day="24"]').click()
+    browser.element('[name="date_from"]').type('24.09.2024').press_enter()
 
     # Select date To
-    browser.element('[data-ti="date_toDate"]').element('[data-ti="order-calendar-navigation-next"]').element(
-        '[data-day="26"]').click()
+    browser.element('[name="date_back"]').type('28.11.2024')
 
     # Select the number of passengers
-    browser.element('[data-ti="passengers_service_class"]').click()
-    browser.element('[data-ti="passenger_counter_adult"]').element('[data-ti="plus"]').click()
-    browser.element('[data-ti="passenger_counter_child"]').element('[data-ti="plus"]').click()
-    browser.element('[data-ti="passenger_counter_infant"]').element('[data-ti="plus"]').click()
+    browser.element('[class="counter_adult_wrp"]').element('[class="increase"]').click()
 
     # Select class
-    browser.element('[data-ti="class_selector_F"]').should(have.text('Первый')).click()
-
-    # Close modal-windows with passengers
-    browser.element('[data-ti="order-popper-close"]').click()
+    browser.element('[class="j-dropdown"]').click()
+    browser.element('[data-value="C"]').click()
 
     # Submit selection
-    browser.element('[data-ti="order-popper-close"]').click()
-
-
-def test_research_vacancy():
-    # Open main page
-    browser.open('/')
-
-    # Open authorization form
-    browser.element('[data-ti="login_link"]').click()
-
-    # Fill mail field
-    browser.element('[name="email"]').should(be.blank).type('marivtest@mail.ru')
-
-    # Fill password field
-    browser.element('[name="password"]').should(be.blank).type('qwerty123')
-
-    # Submit authorization
-    browser.element('[data-ti="submit-trigger"]').click()
-
-
+    browser.element('[class="button_wrp j-buttons_block"]').click()
