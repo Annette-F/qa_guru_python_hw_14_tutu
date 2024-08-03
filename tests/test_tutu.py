@@ -11,7 +11,7 @@ from pages.form_page import AuthorizationUserPage, UpdatePersonalData, ChangeLan
 @allure.story('Authorization')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_valid_authorization():
-    with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
+    with allure.step('Opem main page https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
