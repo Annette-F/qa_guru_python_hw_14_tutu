@@ -1,13 +1,32 @@
+import os
+
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selene import browser
 
 from utils import attach
+from dotenv import load_dotenv
+
+DEFAULT_BROWSER_VERSION = '100.0'
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        '--browser_version',
+        default='100.0'
+    )
+
+
+@pytest.fixture(scope='session', autouse=True)
+def load_env():
+    load_dotenv()
 
 
 @pytest.fixture(scope='function', autouse=True)
-def setting_browser():
+def setting_browser(request):
+    browser_version = request.config.getoption('--browser_version')
+    browser_version = browser_version if browser_version != "" else DEFAULT_BROWSER_VERSION
     browser.config.base_url = 'https://www.tutu.ru'
     browser.config.window_width = 1920
     browser.config.window_height = 1080
@@ -15,7 +34,7 @@ def setting_browser():
     options = Options()
     selenoid_capabilities = {
         "browserName": "chrome",
-        "browserVersion": "100.0",
+        "browserVersion": browser_version,
         "selenoid:options": {
             "enableVNC": True,
             "enableVideo": True
@@ -23,13 +42,17 @@ def setting_browser():
     }
 
     options.capabilities.update(selenoid_capabilities)
+
+    login = os.getenv('LOGIN')
+    password = os.getenv('PASSWORD')
+
     driver = webdriver.Remote(
-        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
         options=options)
 
     browser.config.driver = driver
 
-    yield
+    yield browser
 
     attach.add_screenshot(browser)
     attach.add_logs(browser)
