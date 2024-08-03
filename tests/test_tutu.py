@@ -10,9 +10,6 @@ from pages.form_page import AuthorizationUserPage, UpdatePersonalData, ChangeLan
 @allure.feature('Authorization with valid login and password')
 @allure.story('Authorization')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
-
-
-
 def test_valid_authorization():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
