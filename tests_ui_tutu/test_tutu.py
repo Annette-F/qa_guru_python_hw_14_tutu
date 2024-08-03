@@ -3,12 +3,16 @@ import allure
 from pages.form_page import AuthorizationUserPage, UpdatePersonalData, ChangeLanguagePage, SearchAviatickets
 
 
+# def test_decorator_labels():
 @allure.tag('Web')
 @allure.severity(Severity.CRITICAL)
-@allure.label('Owner', 'Annette-F')
+@allure.label('owner', 'Annette-F')
 @allure.feature('Authorization with valid login and password')
 @allure.story('Authorization')
-@allure.link('https://www.tutu.ru', name='Tutu')
+@allure.link('https://www.tutu.ru', name='Tutu.ru')
+
+
+
 def test_valid_authorization():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
@@ -32,10 +36,10 @@ def test_valid_authorization():
 
 @allure.tag('Web')
 @allure.severity(Severity.CRITICAL)
-@allure.label('Owner', 'Annette-F')
+@allure.label('owner', 'Annette-F')
 @allure.feature('Authorization with wrong password')
 @allure.story('Authorization')
-@allure.link('https://www.tutu.ru', name='Tutu')
+@allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_authorization_with_wrong_password():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
@@ -59,10 +63,10 @@ def test_authorization_with_wrong_password():
 
 @allure.tag('Web')
 @allure.severity(Severity.NORMAL)
-@allure.label('Owner', 'Annette-F')
+@allure.label('owner', 'Annette-F')
 @allure.feature('Update profile')
 @allure.story('Profile')
-@allure.link('https://www.tutu.ru', name='Tutu')
+@allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_update_personal_data():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
@@ -111,10 +115,10 @@ def test_update_personal_data():
 
 @allure.tag('Web')
 @allure.severity(Severity.MINOR)
-@allure.label('Owner', 'Annette-F')
+@allure.label('owner', 'Annette-F')
 @allure.feature('Page language changes')
 @allure.story('Page language')
-@allure.link('https://www.tutu.ru', name='Tutu')
+@allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_change_language_page():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
@@ -130,10 +134,10 @@ def test_change_language_page():
 
 @allure.tag('Web')
 @allure.severity(Severity.CRITICAL)
-@allure.label('Owner', 'Annette-F')
+@allure.label('owner', 'Annette-F')
 @allure.feature('Search aviatickets')
 @allure.story('Page aviatickets')
-@allure.link('https://www.tutu.ru', name='Tutu')
+@allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_search_aviaticket():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
         authorization_page = AuthorizationUserPage()
