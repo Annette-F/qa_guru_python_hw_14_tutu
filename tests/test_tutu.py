@@ -1,6 +1,9 @@
 from allure_commons.types import Severity
 import allure
-from pages.form_page import AuthorizationUserPage, UpdatePersonalData, ChangeLanguagePage, SearchAviatickets
+from pages.authorization_page import AuthorizationUserPage
+from pages.change_language_page import ChangeLanguagePage
+from pages.edit_personal_data_page import EditPersonalData
+from pages.search_aviatickets_page import SearchAviatickets
 
 
 # def test_decorator_labels():
@@ -82,7 +85,7 @@ def test_update_personal_data():
         authorization_page.submit_authorization()
 
     with allure.step('Открываем профиль пользователя'):
-        profile_page = UpdatePersonalData()
+        profile_page = EditPersonalData()
         profile_page.open_profile()
 
     with allure.step('Заполняем поле ввода Имя'):
