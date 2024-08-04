@@ -16,8 +16,10 @@ from pages.search_aviatickets_page import search_aviaticket
 def test_valid_authorization():
     authorization_page.open()
     authorization_page.open_authorization_page()
-    authorization_page.fill_email('marivtest@mail.ru')
-    authorization_page.fill_password('qwerty123')
+    authorization_page.fill_email()
+    authorization_page.fill_password()
+    # authorization_page.fill_email('marivtest@mail.ru')
+    # authorization_page.fill_password('qwerty123')
     authorization_page.submit_authorization()
     authorization_page.should_have_logout_form()
 
@@ -31,8 +33,10 @@ def test_valid_authorization():
 def test_authorization_with_wrong_password():
     authorization_page.open()
     authorization_page.open_authorization_page()
-    authorization_page.fill_email('marivtest@mail.ru')
-    authorization_page.fill_password('zxcv1234')
+    authorization_page.fill_email()
+    authorization_page.fill_wrong_password()
+    # authorization_page.fill_email('marivtest@mail.ru')
+    # authorization_page.fill_password('zxcv1234')
     authorization_page.submit_authorization()
     authorization_page.should_have_text('Неверный адрес почты или пароль.')
 
@@ -46,8 +50,8 @@ def test_authorization_with_wrong_password():
 def test_update_personal_data():
     authorization_page.open()
     authorization_page.open_authorization_page()
-    authorization_page.fill_email('marivtest@mail.ru')
-    authorization_page.fill_password('qwerty123')
+    authorization_page.fill_email()
+    authorization_page.fill_password()
     authorization_page.submit_authorization()
     profile_page.open_profile()
     profile_page.type_first_name('Maria')
