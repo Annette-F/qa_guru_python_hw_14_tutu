@@ -1,12 +1,15 @@
 from selene import browser, be, have
+import allure
 
 
 class ChangeLanguagePage:
     def select_eng_language(self):
-        browser.element('[class="flag eng"]').click()
+        with allure.step('Change the page to English'):
+            browser.element('[class="flag eng"]').click()
 
     def select_rus_language(self):
-        browser.element('[class="flag rus"]').click()
+        with allure.step('Change the page to Russian'):
+            browser.element('[class="flag rus"]').click()
 
 
 language_page = ChangeLanguagePage()

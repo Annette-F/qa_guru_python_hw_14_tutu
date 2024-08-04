@@ -1,34 +1,43 @@
 from selene import browser
-
+import allure
 
 class EditPersonalData:
     def open_profile(self):
-        browser.element('[data-ti="user_name_link"]').click()
-        browser.element('#editDataLink').click()
+        with allure.step('Open profile'):
+            browser.element('[data-ti="user_name_link"]').click()
+            browser.element('#editDataLink').click()
 
     def type_first_name(self, firstname):
-        browser.element('#editDForm_first_name').clear().type(firstname)
+        with allure.step('Fill First name'):
+            browser.element('#editDForm_first_name').clear().type(firstname)
 
     def type_middle_name(self, middlename):
-        browser.element('#editDForm_middle_name').clear().type(middlename)
+        with allure.step('Fill Middle name'):
+            browser.element('#editDForm_middle_name').clear().type(middlename)
 
     def type_last_name(self, lastname):
-        browser.element('#editDForm_last_name').clear().type(lastname)
+        with allure.step('Fill Last name'):
+            browser.element('#editDForm_last_name').clear().type(lastname)
 
     def type_phone(self, phone):
-        browser.element('#editDForm_phone').clear().type(phone)
+        with allure.step('Fill Phone'):
+            browser.element('#editDForm_phone').clear().type(phone)
 
     def type_birthday(self, birthday):
-        browser.element('#editDForm_birthday').clear().type(birthday).click()
+        with allure.step('Fill Birthday'):
+            browser.element('#editDForm_birthday').clear().type(birthday).click()
 
     def confirm_agreement_form(self):
-        browser.element('#editDForm_agree').click()
+        with allure.step('Check the consent to the processing of personal data'):
+            browser.element('#editDForm_agree').click()
 
     def submit_edit_form(self):
-        browser.element('#editDForm_submit').click()
+        with allure.step('Submit editing profile'):
+            browser.element('#editDForm_submit').click()
 
     def open_main_page(self):
-        browser.element('.jUzldXN___logoLink').click()
+        with allure.step('Back to the main page'):
+            browser.element('.jUzldXN___logoLink').click()
 
 
 profile_page = EditPersonalData()

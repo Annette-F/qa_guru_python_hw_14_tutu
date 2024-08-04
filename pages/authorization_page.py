@@ -1,27 +1,35 @@
 from selene import browser, be, have
+import allure
 
 
 class AuthorizationUserPage:
     def open(self):
-        browser.open('/')
+        with allure.step('Open the main page https://www.tutu.ru'):
+            browser.open('/')
 
     def open_authorization_page(self):
-        browser.element('[data-ti="login_link"]').click()
+        with allure.step('Open authorization form'):
+            browser.element('[data-ti="login_link"]').click()
 
     def fill_email(self, email):
-        browser.element('[name="email"]').should(be.blank).type(email)
+        with allure.step('Fill Email'):
+            browser.element('[name="email"]').should(be.blank).type(email)
 
     def fill_password(self, password):
-        browser.element('[name="password"]').should(be.blank).type(password)
+        with allure.step('Fill Password'):
+            browser.element('[name="password"]').should(be.blank).type(password)
 
     def submit_authorization(self):
-        browser.element('[data-ti="submit-trigger"]').click()
+        with allure.step('Submit authorization'):
+            browser.element('[data-ti="submit-trigger"]').click()
 
     def should_have_logout_form(self):
-        browser.element('[data-ti="logout_link"]').click()
+        with allure.step('Check the successful authorization'):
+            browser.element('[data-ti="logout_link"]').click()
 
     def should_have_text(self, text):
-        browser.element('[data-ti-error="authApi"]').should(have.text(text))
+        with allure.step('Check that the authorization failed'):
+            browser.element('[data-ti-error="authApi"]').should(have.text(text))
 
 
 authorization_page = AuthorizationUserPage()
