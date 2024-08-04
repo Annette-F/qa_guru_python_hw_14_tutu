@@ -23,3 +23,6 @@ class SearchAviatickets:
 
     def submit_selection(self):
         browser.element('[class="button_wrp j-buttons_block"]').click()
+
+
+search_aviaticket = SearchAviatickets()

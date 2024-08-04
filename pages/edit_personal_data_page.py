@@ -1,5 +1,6 @@
 from selene import browser
 
+
 class EditPersonalData:
     def open_profile(self):
         browser.element('[data-ti="user_name_link"]').click()
@@ -28,3 +29,6 @@ class EditPersonalData:
 
     def open_main_page(self):
         browser.element('.jUzldXN___logoLink').click()
+
+
+profile_page = EditPersonalData()

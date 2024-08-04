@@ -22,3 +22,6 @@ class AuthorizationUserPage:
 
     def should_have_text(self, text):
         browser.element('[data-ti-error="authApi"]').should(have.text(text))
+
+
+authorization_page = AuthorizationUserPage()

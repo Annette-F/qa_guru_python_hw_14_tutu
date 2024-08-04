@@ -1,9 +1,9 @@
 from allure_commons.types import Severity
 import allure
-from pages.authorization_page import AuthorizationUserPage
-from pages.change_language_page import ChangeLanguagePage
-from pages.edit_personal_data_page import EditPersonalData
-from pages.search_aviatickets_page import SearchAviatickets
+from pages.authorization_page import authorization_page
+from pages.change_language_page import language_page
+from pages.edit_personal_data_page import profile_page
+from pages.search_aviatickets_page import search_aviaticket
 
 
 # def test_decorator_labels():
@@ -15,7 +15,6 @@ from pages.search_aviatickets_page import SearchAviatickets
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_valid_authorization():
     with allure.step('Open main page https://www.tutu.ru'):
-        authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
     with allure.step('Открываем окно авторизации'):
@@ -42,7 +41,6 @@ def test_valid_authorization():
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_authorization_with_wrong_password():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
-        authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
     with allure.step('Открываем окно авторизации'):
@@ -69,7 +67,6 @@ def test_authorization_with_wrong_password():
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_update_personal_data():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
-        authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
     with allure.step('Открываем окно авторизации'):
@@ -85,7 +82,6 @@ def test_update_personal_data():
         authorization_page.submit_authorization()
 
     with allure.step('Открываем профиль пользователя'):
-        profile_page = EditPersonalData()
         profile_page.open_profile()
 
     with allure.step('Заполняем поле ввода Имя'):
@@ -121,11 +117,9 @@ def test_update_personal_data():
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_change_language_page():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
-        authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
     with allure.step('Меняем язык отображения страницы на английский'):
-        language_page = ChangeLanguagePage()
         language_page.select_eng_language()
 
     with allure.step('Меняем язык отображения страницы на русский'):
@@ -140,11 +134,9 @@ def test_change_language_page():
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_search_aviaticket():
     with allure.step('Открываем главную страницу сайта https://www.tutu.ru'):
-        authorization_page = AuthorizationUserPage()
         authorization_page.open()
 
     with allure.step('Выбираем город отправления'):
-        search_aviaticket = SearchAviatickets()
         search_aviaticket.type_city_from('Москва')
 
     with allure.step('Выбираем город прибытия'):
