@@ -9,6 +9,11 @@
 - [Уведомление в Telegram о результатах проверки с использованием бота](#loudspeaker-Уведомление-в-Telegram-о-результатах-проверки-с-использованием-бота)
 - [Видео-отчет прохождения теста на Selenoid](#movie_camera-Видео-отчет-прохождения-теста-на-Selenoid)
 
+### [Сайт онлайн-сервиса Tutu](https://www.tutu.ru/)
+
+## Цель проеета
+
+Тестирование основных функций онлайн-сервиса, позволяющих пользователям пройти успешную авторизацию, заполнить персональные данные в личном кабинете, успешно найти необходимую информацию по наличию и стоимости билетов.
 
 ## :octocat: Технологии и инструменты
 
@@ -24,7 +29,6 @@
 <img src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/resources/images/selene.png" height="50" width="50">
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/Telegram.svg" width="50" heigth="50"/>
 </p>
-
 
 ## :white_check_mark: Список реализованных проверок в автотестах
 
