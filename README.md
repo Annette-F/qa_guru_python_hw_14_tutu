@@ -19,7 +19,7 @@
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/pycharm.svg" width="50" heigth="50"/>
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/pytest.svg" width="50" heigth="50"/>
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/github.svg" width="50" heigth="50"/>
-<img width="50%" title="Allure Report" src="icons/Allure_Report.png">
+<code><img width="5%" title="Allure Report" src="icons/Allure_Report.png"></code>
 </p>
 
 
