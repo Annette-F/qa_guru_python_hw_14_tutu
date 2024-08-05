@@ -20,8 +20,7 @@
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/pytest.svg" width="50" heigth="50"/>
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/github.svg" width="50" heigth="50"/>
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/visualstudio.svg" width="50" heigth="50"/>
-<img title="Allure Report" src=".icons/AllureReport.png" height="50" width="50"/>
-<img align="center" src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/images/AllureReport.png" height="50" width="50">
+<img src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/images/AllureReport.png" height="50" width="50">
 </p>
 
 
