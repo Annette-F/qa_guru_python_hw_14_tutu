@@ -19,7 +19,7 @@
 
 
 
-## Технологии и инструменты, используемые в проекте
+## :earth_africa: Технологии и инструменты, используемые в проекте
 
 <p align="left">
 <img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/python.svg" width="50" heigth="50"/>
