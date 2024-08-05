@@ -23,7 +23,7 @@
 <img src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/images/AllureReport.png" height="50" width="50">
 <img src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/images/Selenoid.png" height="50" width="50">
 <img src="https://github.com/Annette-F/qa_guru_python_hw_14_tutu/blob/main/images/selene.png" height="50" width="50">
-
+<img src="https://raw.githubusercontent.com/Annette-F/Annette-F/main/icons/Telegram.svg" width="50" heigth="50"/>
 </p>
 
 
