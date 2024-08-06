@@ -51,3 +51,9 @@
 
 
 ## :movie_camera: Видео прохождения тестов на Selenoid
+
+<code>Selenoid</code> пишет видео прогона каждого теста и видео прикладывается в отчет <code>Allure</code>
+
+<p>
+<img title="Selenoid Video" src="resources/video/video_selenoid.gif" alt="video">
+</p>
