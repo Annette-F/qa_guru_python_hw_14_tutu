@@ -12,4 +12,4 @@ class ChangeLanguagePage:
             browser.element('[class="flag rus"]').click()
 
 
-language_page = ChangeLanguagePage()
+change_language_page = ChangeLanguagePage()

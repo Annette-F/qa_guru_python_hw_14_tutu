@@ -1,6 +1,7 @@
 from selene import browser
 import allure
 
+
 class EditPersonalData:
     def open_profile(self):
         with allure.step('Open profile'):
@@ -40,4 +41,4 @@ class EditPersonalData:
             browser.element('.jUzldXN___logoLink').click()
 
 
-profile_page = EditPersonalData()
+edit_personal_data_page = EditPersonalData()

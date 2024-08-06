@@ -1,5 +1,4 @@
 import os
-
 from selene import browser, be, have
 import allure
 from dotenv import load_dotenv
@@ -7,11 +6,6 @@ from dotenv import load_dotenv
 
 def load_env():
     load_dotenv()
-
-
-
-
-
 
 
 class AuthorizationUserPage:

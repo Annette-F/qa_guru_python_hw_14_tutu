@@ -1,4 +1,4 @@
-from selene import browser
+from selene import browser, have
 import allure
 
 
@@ -32,5 +32,9 @@ class SearchAviatickets:
         with allure.step('Submit selection'):
             browser.element('[class="button_wrp j-buttons_block"]').click()
 
+    def should_be_change_search_button(self):
+        with allure.step('Check search result'):
+            browser.element('[data-ti="icon"]').should(have.text('Изменить'))
 
-search_aviaticket = SearchAviatickets()
+
+search_aviaticket_page = SearchAviatickets()
