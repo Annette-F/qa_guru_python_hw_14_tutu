@@ -1,16 +1,15 @@
 from selene import browser, have
 import allure
 
+
 class QueryPage:
     def information_table(self):
         with allure.step('Open information page'):
             browser.element('[href="/2read/poezda/main/"]').click()
 
-
     def enter_search_query(self):
         with allure.step('Enter search query'):
             browser.element('[id="search"]').click().type('как получить визу').press_enter()
-
 
     def check_search_query(self):
         with allure.step('Check search query'):
