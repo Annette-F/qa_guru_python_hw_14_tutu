@@ -43,16 +43,24 @@
 
 ## :rocket: Запуск тестов в Jenkins с параметрами
 
+<p>
+<img title="Jenkins" src="resources/photo/jenkins.png">
+</p>
 
 ## :bookmark_tabs: Отчет о результатах тестрования в Allure-reports
 
+<p>
+<img title="Allure общая статистика" src="resources/photo/allure.png">
+<img title="Allure графики" src="resources/photo/allure2.png">
+<img title="Allure отчет" src="resources/photo/allure3.png">
+<img title="Allure отчет" src="resources/photo/allure4.png">
+</p>
 
 ## :loudspeaker: Уведомление в Telegram о результатах проверки с использованием бота
 
 <p>
 <img title="Telegram" src="resources/photo/telegram.png">
 </p>
-
 
 ## :movie_camera: Видео прохождения тестов на Selenoid
 
