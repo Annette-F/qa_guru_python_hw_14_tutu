@@ -40,7 +40,7 @@ def test_authorization_with_wrong_password():
 @allure.tag('Web')
 @allure.severity(Severity.NORMAL)
 @allure.label('owner', 'Annette-F')
-@allure.feature('Update profile')
+@allure.feature('Edit profile')
 @allure.story('Profile')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_edit_personal_data():
@@ -68,6 +68,7 @@ def test_edit_personal_data():
 @allure.story('Page language')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
 def test_change_language_page():
+
     authorization_page.open()
     change_language_page.select_eng_language()
     change_language_page.check_change_english_language()
