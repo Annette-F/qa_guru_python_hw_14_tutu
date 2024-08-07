@@ -1,11 +1,6 @@
 import os
 from selene import browser, be, have
 import allure
-from dotenv import load_dotenv
-
-
-def load_env():
-    load_dotenv()
 
 
 class AuthorizationUserPage:
@@ -24,12 +19,12 @@ class AuthorizationUserPage:
 
     def fill_password(self):
         with allure.step('Fill Password'):
-            password = os.getenv('USERPASS')
+            password = os.getenv('USER_PASS')
             browser.element('[name="password"]').should(be.blank).type(password)
 
     def fill_wrong_password(self):
         with allure.step('Fill wrong Password'):
-            passw = os.getenv('WRONGPASS')
+            passw = os.getenv('WRONG_PASS')
             browser.element('[name="password"]').should(be.blank).type(passw)
 
     def submit_authorization(self):

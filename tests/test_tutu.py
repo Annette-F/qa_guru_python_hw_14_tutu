@@ -3,7 +3,7 @@ import allure
 from pages.authorization_page import authorization_page
 from pages.change_language_page import change_language_page
 from pages.edit_personal_data_page import edit_personal_data_page
-from pages.search_aviatickets_page import search_aviaticket_page
+from pages.search_avia_tickets_page import search_avia_ticket_page
 from pages.query_page import query_page
 
 
@@ -43,7 +43,7 @@ def test_authorization_with_wrong_password():
 @allure.feature('Update profile')
 @allure.story('Profile')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
-def test_update_personal_data():
+def test_edit_personal_data():
     authorization_page.open()
     authorization_page.open_authorization_page()
     authorization_page.fill_email()
@@ -57,6 +57,7 @@ def test_update_personal_data():
     edit_personal_data_page.type_birthday('20.04.2000')
     edit_personal_data_page.confirm_agreement_form()
     edit_personal_data_page.submit_edit_form()
+    edit_personal_data_page.check_successful_edit()
     edit_personal_data_page.open_main_page()
 
 
@@ -69,7 +70,9 @@ def test_update_personal_data():
 def test_change_language_page():
     authorization_page.open()
     change_language_page.select_eng_language()
+    change_language_page.check_change_english_language()
     change_language_page.select_rus_language()
+    change_language_page.check_change_russian_language()
 
 
 @allure.tag('Web')
@@ -78,16 +81,16 @@ def test_change_language_page():
 @allure.feature('Search aviatickets')
 @allure.story('Page aviatickets')
 @allure.link('https://www.tutu.ru', name='Tutu.ru')
-def test_search_aviaticket():
+def test_search_avia_ticket():
     authorization_page.open()
-    search_aviaticket_page.type_city_from('Москва')
-    search_aviaticket_page.type_city_to('Сочи')
-    search_aviaticket_page.type_date_from('24.09.2024')
-    search_aviaticket_page.type_date_to('28.11.2024')
-    search_aviaticket_page.count_adult_passengers()
-    search_aviaticket_page.select_class()
-    search_aviaticket_page.submit_selection()
-    search_aviaticket_page.should_be_change_search_button()
+    search_avia_ticket_page.type_city_from('Москва')
+    search_avia_ticket_page.type_city_to('Сочи')
+    search_avia_ticket_page.type_date_from('24.09.2024')
+    search_avia_ticket_page.type_date_to('28.11.2024')
+    search_avia_ticket_page.count_adult_passengers()
+    search_avia_ticket_page.select_class()
+    search_avia_ticket_page.submit_selection()
+    search_avia_ticket_page.should_be_change_search_button()
 
 
 @allure.tag('Web')

@@ -9,11 +9,11 @@ class QueryPage:
 
     def enter_search_query(self):
         with allure.step('Enter search query'):
-            browser.element('[id="search"]').click().type('как получить визу').press_enter()
+            browser.element('#search').click().type('как получить визу').press_enter()
 
     def check_search_query(self):
         with allure.step('Check search query'):
-            browser.element('[class="title_block"]').should(have.text('Результат поиска по запросу'))
+            browser.element('.title_block').should(have.text('Результат поиска по запросу'))
 
 
 query_page = QueryPage()
